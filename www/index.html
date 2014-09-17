@@ -1,0 +1,273 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Beer O'Clock!</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="Beer O'Clock" />
+		<meta name="keywords" content="Beer O'Clock" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="Bastian Vennemann">
+        <script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.scrolly.min.js"></script>
+        <script type="text/javascript" src="js/jquery.countdown.js"></script>
+		<script type="text/javascript" src="js/jquery-mobile-touch.min.js"></script>
+        <script type="text/javascript" src="js/instafeed.min.js"></script>
+        <script src="js/skel.min.js"></script>
+		<script src="js/init.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+            <link rel="stylesheet" href="css/style-mobile.css" />
+		</noscript>
+        <link rel="stylesheet" href="css/media-queries.css" />
+        <!-- settings for iOS-Safari Web-App //-->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="res/icon/ios_webapp/touch-icon-iphone.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="res/icon/ios_webapp/touch-icon-ipad.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="res/icon/ios_webapp/touch-icon-iphone-retina.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="res/icon/ios_webapp/touch-icon-ipad-retina.png">
+	</head>
+	<body>
+			<nav id="nav">
+				<ul class="container">
+					<li><a href="#top" title="Home"><span class="icon fa-home"></span></a></li>
+                    <li><a href="#einstellungen" title="Tools and settings"><span class="icon fa-cog"></span></a></li>
+                    <li><a href="#instagram" title="Instagram"><span class="icon fa-image"></span></a></li>
+                    <li><a href="#contact" title="About"><span class="icon fa-info"></span></a></li>
+				</ul>
+			</nav>
+        <!-- dimmer //-->
+			<div class="overlayBG" id="overlay"></div>
+		<!-- Home -->
+			<div class="wrapper style1 first">
+				<article class="container" id="top">
+					<div class="row">
+						<div class="4u">
+							<span class="image fit" id="beer_big"><img src="images/beer.png" alt="Beer O'Clock" /></span>
+						</div>
+						<div class="8u">
+							<header>
+								<h1>Time for a <strong>Beer</strong>?</h1>
+							</header>
+							
+                            <div id="beer_result_wrap">
+                                <div class="loading"></div>
+                                <div id="beer_result_good">
+                                </div>
+                                <div id="beer_result_bad">
+                                </div>
+                                <span id="close_beer_result" class="button big scrolly">Close</span>
+                                <div id="werbung_betathome_small" class="hidefordesktop"></div>
+                                <div id="werbung_betathome_medium" class="hideforsmall"></div>
+                            </div>
+							<a href="#" id="check_for_a_beer" class="button big scrolly">Is it Beer O'Clock?</a>
+                            <div class="werbung">
+                                <script type="text/javascript" src="http://ad.leadboltads.net/show_app_ad.js?section_id=135084265"></script>
+                            </div>
+						</div>
+					</div>
+					<div id="werbung_braufaesschen" class="hideforsmall">
+					</div>
+				</article>
+			</div>
+			
+		<!-- Einstellungen und Extras -->
+			<div class="wrapper style2">
+				<article id="einstellungen">
+					<header>
+						<h2>Tools and settings.</h2>
+						<p>Here you can make use of helpful tools.</p>
+					</header>
+					<div class="container">
+						<div class="row">
+                        <!-- Sound Volume //-->
+							<div class="6u">
+								<section class="box style1" id="volume">
+                                    <span class="icon featured fa-volume-off" id="icon_volume_off"></span>
+									<span class="icon featured fa-volume-up" id="icon_volume_on"></span>
+									<h3>Volume</h3>
+                                    <p class="text_volume"></p>
+								</section>
+							</div>
+                        
+                            <div class="6u">
+								<section class="box style1" id="cal_entry">
+									<span class="icon featured fa-calendar-o" id="cal_symbol"></span>
+									<h3>Calendar entry</h3>
+									<p>Click here to be reminded to drink beer at four o'clock sharp.<br /></p>
+								</section>
+							</div>
+							<div id="cal_location">
+								<span id="close_cal_location" class="icon fa-times-circle"></span>
+								<p>Please enter a place where you want to enjoy your beer:</p>
+								<input type="text" name="cal_input_location" id="cal_input_location" placeholder="Location" /><br /><br />
+								<span id="send_location" class="button big scrolly">Set Reminder</span>
+							</div>
+							<div class="12u" id="countdown_wrapper">
+								<section class="box style1" id="countdown">
+									<span class="icon featured fa-clock-o"></span>
+									<h3>Countdown</h3>
+									<p id="countdown_hint">Click here to start a countdown.</p>
+                                    <div id="countdown_show" class="countdownHolder"></div>
+								</section>
+							</div>
+						</div>
+					</div>
+					<footer>
+                        <p></p>
+					</footer>
+				</article>
+			</div>
+
+		<!-- Instagram -->
+			<div class="wrapper style1">
+				<article class="container" id="instagram">
+					<header>
+						<h2>Instagram.</h2>
+						<p>Upload images to Instagram with the hashtag #beeroclock.</p>
+					</header>
+					<div class="row">
+                        <div id="instafeed" class="12u"></div>
+                        <span id="load-more" class="button scrolly">More</span>
+					</div>
+					<div id="werbung_braufaesschen_small" class="hidefordesktop">
+					</div>
+					<div id="werbung_braufaesschen_2" class="hideforsmall">
+					</div>
+				</article>
+			</div>
+        
+		<!-- About -->
+			<div class="wrapper style4">
+				<article id="contact" class="container small">
+					<header>
+						<h2>About.</h2>
+						<p>With the app "Beer O'Clock" you'll never miss your well-deserved after-work beer!</p>
+						<p>Check with this outstanding app, whether it's already time to consume a laudable <strong>brew</strong>.</p>
+					</header>
+					<div class="container">
+						<div class="row">
+							<div class="12u">
+								<hr />
+								<div class="hidefordesktop">
+									<h3>Share this app.</h3>
+									<ul class="social">
+										<li><button class="icon fa-facebook" onclick="window.plugins.socialsharing.shareViaFacebook('This app is what you need: https://play.google.com/store/apps/details?id=us.vennemann.beer', null, null, function() {console.log('share ok')}, function(errormsg){alert(errormsg)})"><span class="label">Facebook</span></button></li>
+										<li><button class="icon fa-twitter" onclick="window.plugins.socialsharing.shareViaTwitter('This app is what you need: Beer O'Clock', null, 'https://play.google.com/store/apps/details?id=us.vennemann.beer')"><span class="label">Twitter</span></button></li>
+										<li><button class="icon fa-share-alt" onclick="window.plugins.socialsharing.share('This app is what you need: https://play.google.com/store/apps/details?id=us.vennemann.beer', 'App: Beer O'Clock')"><span class="label">Share</span></button></li>
+									</ul>
+								</div>
+								<div class="hideforsmall">
+									<h3>Like it on facebook</h3>
+									<iframe src="http://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fkeinbiervorvierapp&amp;width&amp;layout=button&amp;action=like&amp;show_faces=false&amp;share=true&amp;height=35&amp;appId=268973263309740" class="fb_like"></iframe>
+									<h3>Get the app</h3>
+									<a href="https://play.google.com/store/apps/details?id=us.vennemann.beer">
+										<img alt="Android app on Google Play" src="images/play_store.png" />
+									</a>
+								</div>
+								<hr />
+							</div>
+						</div>
+						<div class="row">
+							<div class="12u">
+								<h3>Privacy policy.</h3>
+								<p class="datenschutz"><strong>Permissions:</strong> <br />
+									<em>Contacts/calendar</em> &middot; Adding calendar entries using the function "Calendar Entry".<br />
+									<em>Photos/media/files/camera/microphone</em> &middot; For playing sounds<br />
+								</p>
+								<hr />
+							</div>
+						</div>
+					</div>
+					<footer>
+						<ul id="copyright">
+							<li>&copy; vennemann.us &middot; 2014</li>
+							<li class="impressum"><a href="http://www.vennemann.us/#impressum" target="_blank">Imprint</a></li>
+							<li>Design-Inspiration: HTML5 UP</li>
+						</ul>
+					</footer>
+				</article>
+			</div>
+			<div class='toast'>
+				<div id="toast_progress"></div>
+				<span id="toast_msg">Toast Msg</span>
+			</div>
+			<!-- audio id muss == filename sein //-->
+			<!-- success sounds -->
+			<audio id="success_sound1">
+				<source src="sounds/success_sound1.mp3">
+			</audio>
+			<audio id="success_sound2">
+				<source src="sounds/success_sound2.mp3">
+			</audio>
+			<audio id="success_sound3">
+				<source src="sounds/success_sound3.mp3">
+			</audio>
+			<audio id="success_sound4">
+				<source src="sounds/success_sound4.mp3">
+			</audio>
+			<audio id="success_sound5">
+				<source src="sounds/success_sound5.mp3">
+			</audio>
+			<audio id="success_sound6">
+				<source src="sounds/success_sound6.mp3">
+			</audio>
+			<audio id="success_sound7">
+				<source src="sounds/success_sound7.mp3">
+			</audio>
+			<audio id="success_sound8">
+				<source src="sounds/success_sound8.mp3">
+			</audio>
+			<audio id="success_sound9">
+				<source src="sounds/success_sound9.mp3">
+			</audio>
+			<audio id="success_sound10">
+				<source src="sounds/success_sound10.mp3">
+			</audio>
+			<!-- fail sounds -->
+			<audio id="fail_sound1">
+				<source src="sounds/fail_sound1.mp3">
+			</audio>
+			<audio id="fail_sound2">
+				<source src="sounds/fail_sound2.mp3">
+			</audio>
+			<audio id="fail_sound3">
+				<source src="sounds/fail_sound3.mp3">
+			</audio>
+            <script type="text/javascript" src="js/kbvv_functions.js"></script> 
+            <script type="text/javascript" src="https://www.adcell.de/js/jsadlib.js"></script>
+			<script type="text/javascript">
+				Adcell.user.setPartnerId("66339");
+				Adcell.user.getAd({
+					"wid":"99365",
+					"id":"werbung_braufaesschen"
+				});
+			    Adcell.user.getAd({
+					"wid":"99364",
+					"id":"werbung_braufaesschen_small"
+				});
+				Adcell.user.getAd({
+					"wid":"99366",
+					"id":"werbung_braufaesschen_2"
+				});
+				//bet-at-home
+				Adcell.user.setPartnerId("66339");
+				Adcell.user.getAd({
+					"wid":"104339",
+					"id":"werbung_betathome_small"
+				});
+				Adcell.user.getAd({
+					"wid":"65060",
+					"id":"werbung_betathome_medium"
+				});
+			</script>
+	</body>
+</html>
