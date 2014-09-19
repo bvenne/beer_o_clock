@@ -27,59 +27,59 @@ jQuery(function($) {
 		if(current_hours == 0) {
 			$("#close_beer_result").delay(delay_time).fadeIn("normal");
 			$("#beer_result_good").delay(delay_time).fadeIn("normal");
-			$("#beer_result_good").html("<span class='icon fa-check'></span><br />Sicher!<br /><p style='color: #888; font-size: 24px;'>Die Nacht ist noch jung!</p>");
+			$("#beer_result_good").html("<span class='icon fa-check'></span><br />For sure!<br /><p style='color: #888; font-size: 24px;'>I like beer 'cos it is good - I drink beer because I should</p>");
 			// playing sound:
 			playSuccessSound();
 		}
 		else if(current_hours == 1) {
 			$("#close_beer_result").delay(delay_time).fadeIn("normal");
 			$("#beer_result_good").delay(delay_time).fadeIn("normal");
-			$("#beer_result_good").html("<span class='icon fa-check'></span><br />Jap!<br /><p style='color: #888; font-size: 24px;'>Lieber Pils-Bier als Shakespeare.</p>");
+			$("#beer_result_good").html("<span class='icon fa-check'></span><br />Everything green!<br /><p style='color: #888; font-size: 24px;'>Ho! Ho! Ho! To the bottle I go - To heal my heart and drown my woe</p>");
 			// playing sound:
 			playSuccessSound();
 		}
 		else if(current_hours == 2) {
 			$("#close_beer_result").delay(delay_time).fadeIn("normal");
 			$("#beer_result_good").delay(delay_time).fadeIn("normal");
-			$("#beer_result_good").html("<span class='icon fa-check'></span><br />øl tid!<br /><p style='color: #888; font-size: 24px;'>Lieber Bockbier als Ziegenmilch.</p>");
+			$("#beer_result_good").html("<span class='icon fa-check'></span><br />Beer time!<br /><p style='color: #888; font-size: 24px;'>Sometimes too much to drink is barely enough.</p>");
 			// playing sound:
 			playSuccessSound();
 		}
 		else if(current_hours == 3) {
 			$("#close_beer_result").delay(delay_time).fadeIn("normal");
 			$("#beer_result_good").delay(delay_time).fadeIn("normal");
-			$("#beer_result_good").html("<span class='icon fa-check'></span><br />Immer weiter!<br /><p style='color: #888; font-size: 22px;'>Ich kann ohne Dich nicht heben, sagte er zum Bierkrug.</p>");
+			$("#beer_result_good").html("<span class='icon fa-check'></span><br />Go ahead!<br /><p style='color: #888; font-size: 22px;'>You can't drink all day if you don't start in the morning.</p>");
 			// playing sound:
 			playSuccessSound();
 		}
 		else if(current_hours == 4) {
 			$("#close_beer_result").delay(delay_time).fadeIn("normal");
 			$("#beer_result_good").delay(delay_time).fadeIn("normal");
-			$("#beer_result_good").html("<span class='icon fa-check'></span><br />Läuft!<br /><br /><p style='color: #888; font-size: 24px;'>Eins geht noch!</p>");
+			$("#beer_result_good").html("<span class='icon fa-check'></span><br />Easy!<br /><br /><p style='color: #888; font-size: 24px;'>One more goes in!</p>");
 			// playing sound:
 			playSuccessSound();
 		}
 		else if(current_hours == 5) {
 			$("#close_beer_result").delay(delay_time).fadeIn("normal");
 			$("#beer_result_good").delay(delay_time).fadeIn("normal");
-			$("#beer_result_good").html("<span class='icon fa-check'></span><br />OK, aber...<br /><br /><p style='color: #888; font-size: 24px;'>Letzte Order!</p>");
+			$("#beer_result_good").html("<span class='icon fa-check'></span><br />OK, but...<br /><br /><p style='color: #888; font-size: 24px;'>Last order!</p>");
 			// playing sound:
 			playSuccessSound();
 		}
 		else if(current_hours == 6) {
 			$("#close_beer_result").delay(delay_time).fadeIn("normal");
 			$("#beer_result_bad").delay(delay_time).fadeIn("normal");
-			$("#beer_result_bad").html("<span class='icon fa-times-circle'></span><br />Nein!<br /><p style='color: #888; font-size: 24px;'>Geh ins Bett!</p>");
+			$("#beer_result_bad").html("<span class='icon fa-times-circle'></span><br />No!<br /><p style='color: #888; font-size: 24px;'>Go to bed!</p>");
 			// playing sound:
 			playFailSound();
 		}
 
-		//Meldung von 7-16 uhr
+		//Meldung von 7-15 uhr
 		else if(current_hours > beer_stop && current_hours < 15){
 			var wartezeit = beer_start2-current_hours;
 			$("#close_beer_result").delay(delay_time).fadeIn("normal");
 			$("#beer_result_bad").delay(delay_time).fadeIn("normal");
-			$("#beer_result_bad").html("<span class='icon fa-times-circle'></span><br />Leider nein!<br /><p style='color: #888; font-size: 24px;'>Du musst noch ca. "+wartezeit+" Stunden warten!</p>");
+			$("#beer_result_bad").html("<span class='icon fa-times-circle'></span><br />Unfortunately not!<br /><p style='color: #888; font-size: 24px;'>You still have to wait about "+wartezeit+" hours!</p>");
 			// playing sound:
 			playFailSound();
 			//console.log("zwischen 6-16 uhr --> NICHT OK!!");   
@@ -90,63 +90,63 @@ jQuery(function($) {
 			var wartezeit = 60-current_minutes;
 			$("#close_beer_result").delay(delay_time).fadeIn("normal");
 			$("#beer_result_bad").delay(delay_time).fadeIn("normal");
-			$("#beer_result_bad").html("<span class='icon fa-times-circle'></span><br />Noch nicht!<br /><p style='color: #888; font-size: 24px;'>... aber stell' schon mal kalt - nur noch "+wartezeit+" Minuten!</p>");
+			$("#beer_result_bad").html("<span class='icon fa-times-circle'></span><br />Not yet!<br /><p style='color: #888; font-size: 24px;'>But it's time to put the beer on ice - only "+wartezeit+" minutes to wait!</p>");
 			// playing sound:
 			playFailSound();
 		}
 		else if(current_hours == 16) {
 			$("#close_beer_result").delay(delay_time).fadeIn("normal");
 			$("#beer_result_good").delay(delay_time).fadeIn("normal");
-			$("#beer_result_good").html("<span class='icon fa-check'></span><br />Endlich!<br /><br /><p style='color: #888; font-size: 24px;'>Genieß' dein <span class='icon fa-beer'></span></p>");
+			$("#beer_result_good").html("<span class='icon fa-check'></span><br />Finally!<br /><br /><p style='color: #888; font-size: 24px;'>Enjoy your <span class='icon fa-beer'></span></p>");
 			// playing sound:
 			playSuccessSound();
 		}
 		else if(current_hours == 17) {
 			$("#close_beer_result").delay(delay_time).fadeIn("normal");
 			$("#beer_result_good").delay(delay_time).fadeIn("normal");
-			$("#beer_result_good").html("<span class='icon fa-check'></span><br />In Ordnung!<br /><p style='color: #888; font-size: 24px;'>Niemals vergessen - sechs Bier sind ein Essen!</p>");
+			$("#beer_result_good").html("<span class='icon fa-check'></span><br />All right!<br /><p style='color: #888; font-size: 24px;'>To alcohol! The cause of – and solution to – all of life's problems.</p>");
 			// playing sound:
 			playSuccessSound();
 		}
 		else if(current_hours == 18) {
 			$("#close_beer_result").delay(delay_time).fadeIn("normal");
 			$("#beer_result_good").delay(delay_time).fadeIn("normal");
-			$("#beer_result_good").html("<span class='icon fa-check'></span><br />Gewiss doch!<br /><p style='color: #888; font-size: 24px;'>Bier gibt keine Rotwein-Flecken.</p>");
+			$("#beer_result_good").html("<span class='icon fa-check'></span><br />YEP!<br /><p style='color: #888; font-size: 24px;'>I here a beer calling me.</p>");
 			// playing sound:
 			playSuccessSound();
 		}
 		else if(current_hours == 19) {
 			$("#close_beer_result").delay(delay_time).fadeIn("normal");
 			$("#beer_result_good").delay(delay_time).fadeIn("normal");
-			$("#beer_result_good").html("<span class='icon fa-check'></span><br />Natürlich!<br /><p style='color: #888; font-size: 24px;'>Man soll ja viel trinken...</p>");
+			$("#beer_result_good").html("<span class='icon fa-check'></span><br />Of course!<br /><p style='color: #888; font-size: 24px;'>Only drink to ease the pain of consciousness.</p>");
 			// playing sound:
 			playSuccessSound();
 		}
 		else if(current_hours == 20) {
 			$("#close_beer_result").delay(delay_time).fadeIn("normal");
 			$("#beer_result_good").delay(delay_time).fadeIn("normal");
-			$("#beer_result_good").html("<span class='icon fa-check'></span><br />Jawoll!<br /><p style='color: #888; font-size: 24px;'>Froh beim Bier, das lieben wir.</p>");
+			$("#beer_result_good").html("<span class='icon fa-check'></span><br />All clear!<br /><p style='color: #888; font-size: 24px;'>There's nothing wrong with sobriety in moderation.</p>");
 			// playing sound:
 			playSuccessSound();
 		}
 		else if(current_hours == 21) {
 			$("#close_beer_result").delay(delay_time).fadeIn("normal");
 			$("#beer_result_good").delay(delay_time).fadeIn("normal");
-			$("#beer_result_good").html("<span class='icon fa-check'></span><br />Yes!<br /><br /><p style='color: #888; font-size: 24px;'>Lass' laufen.</p>");
+			$("#beer_result_good").html("<span class='icon fa-check'></span><br />Yes!<br /><br /><p style='color: #888; font-size: 24px;'>Let it flow.</p>");
 			// playing sound
 			playSuccessSound();
 		}
 		else if(current_hours == 22) {
 			$("#close_beer_result").delay(delay_time).fadeIn("normal");
 			$("#beer_result_good").delay(delay_time).fadeIn("normal");
-			$("#beer_result_good").html("<span class='icon fa-check'></span><br />Auf jeden!<br /><p style='color: #888; font-size: 24px;'>Mit des Bieres Hochgenus wächst des Bauches Radius!</p>");
+			$("#beer_result_good").html("<span class='icon fa-check'></span><br />Definitely!<br /><p style='color: #888; font-size: 24px;'>You're not drunk if you can lie on the floor without holding on.</p>");
 			// playing sound
 			playSuccessSound();
 		}
 		else if(current_hours == 23) {
 			$("#close_beer_result").delay(delay_time).fadeIn("normal");
 			$("#beer_result_good").delay(delay_time).fadeIn("normal");
-			$("#beer_result_good").html("<span class='icon fa-check'></span><br />Geht klar!<br /><p style='color: #888; font-size: 24px;'>Man soll das Bier nicht vor dem Kater loben.</p>");
+			$("#beer_result_good").html("<span class='icon fa-check'></span><br />Beer!<br /><p style='color: #888; font-size: 24px;'>It makes you see double ...and feel single!</p>");
 			// playing sound:
 			playSuccessSound();
 		}
@@ -175,13 +175,13 @@ jQuery(function($) {
 		} else {
 			// iOS -- Fehler
 			if(iOS=== true) {
-				$('#toast_msg').html("<span class='icon fa-times'></span> Die Kalender-Funktion ist in iOS z.Zt. nicht verfügbar.");
+				$('#toast_msg').html("<span class='icon fa-times'></span> The calendar feature is currently not available on iOS.");
 				$('.toast').fadeIn(400).delay(4000).fadeOut(400); 
 				$('#toast_progress').delay(400).animate({ width: '0', left: '0' }, 4000, 'swing').css('width','100%');
 			}
 			else {
 				// Web / Browser
-				$('#toast_msg').html("<span class='icon fa-times'></span> Die Kalender-Funktion ist in der Web-Version nicht verfügbar. Lad' dir die App herunter!");
+				$('#toast_msg').html("<span class='icon fa-times'></span> The calendar function is not available in the web version. Get the app!");
 				$('.toast').fadeIn(400).delay(4000).fadeOut(400); 
 				$('#toast_progress').delay(400).animate({ width: '0', left: '0' }, 4000, 'swing').css('width','100%');
 			}
@@ -217,18 +217,18 @@ jQuery(function($) {
     if(localStorage.getItem("kbvv_volume") === null) {
         console.log("Initial volume ON");
         $("#icon_volume_on").show();
-        $(".text_volume").html("Sound ist <span class='text_volume_on'>On</span>.");
+        $(".text_volume").html("Sound is <span class='text_volume_on'>On</span>.");
     }
     else {
         console.log("Initial volume OFF");
         $("#icon_volume_off").show();
-        $(".text_volume").html("Sound ist <span class='text_volume_off'>Off</span>.");
+        $(".text_volume").html("Sound is <span class='text_volume_off'>Off</span>.");
     };
     // Mute / unmute sound volume
     $("#volume").click(function() {
 		if(iOS=== true)
 		{
-			$('#toast_msg').html("<span class='icon fa-times'></span> Die Mute-Funktion ist in iOS z.Zt. nicht verfügbar.");
+			$('#toast_msg').html("<span class='icon fa-times'></span> The mute function is currently not available on iOS.");
 			$('.toast').fadeIn(400).delay(4000).fadeOut(400); 
 			$('#toast_progress').delay(400).animate({ width: '0', left: '0' }, 4000, 'swing').css('width','100%');
 		}
@@ -237,14 +237,14 @@ jQuery(function($) {
             localStorage.setItem("kbvv_volume", "off");
             $("#icon_volume_on").hide();
             $("#icon_volume_off").show();
-            $(".text_volume").html("Sound ist <span class='text_volume_off'>Off</span>.");
+            $(".text_volume").html("Sound is <span class='text_volume_off'>Off</span>.");
         }
         else {
             console.log("volume was clicked - localstorage key 'kbvv_volume' gibt es (off) also wird es removed --> auf VOLUME ON!!!");
             localStorage.removeItem("kbvv_volume");
             $("#icon_volume_off").hide();
             $("#icon_volume_on").show();
-            $(".text_volume").html("Sound ist <span class='text_volume_on'>On</span>.");
+            $(".text_volume").html("Sound is <span class='text_volume_on'>On</span>.");
         }
     });
     
@@ -332,7 +332,7 @@ function playSuccessSound(){
 
 // Play Random Fail
 function playFailSound(){
-	var fail_sounds = ["fail_sound1","fail_sound2","fail_sound3"];
+	var fail_sounds = ["fail_sound1","fail_sound2","fail_sound3","fail_sound4","fail_sound5","fail_sound6","fail_sound7","fail_sound8","fail_sound9","fail_sound10","fail_sound11"];
 	random_fail_sound = fail_sounds[Math.floor(Math.random() * fail_sounds.length)];
 	setTimeout(function(){
 		//HTML5
@@ -385,22 +385,22 @@ function calendar_events(location){
 
     if(current_hours >= 16){
         var current_day = current_day+1;
-        var cal_success_msg = "Top, du wirst morgen um 16 Uhr an dein Bierchen erinnert <span class='icon fa-check'></span>";
+        var cal_success_msg = "Perfect, you will be reminded tomorrow by four o'clock to your beer <span class='icon fa-check'></span>";
     }
     else {
-        var cal_success_msg = "Top, du wirst heute um 16 Uhr an dein Bierchen erinnert <span class='icon fa-check'></span>";
+        var cal_success_msg = "Perfect, you will be reminded by four o'clock to your beer <span class='icon fa-check'></span>";
     }
     
     var startDate = new Date(current_year,current_month,current_day,16,0,0,0,0);
     var endDate = new Date(current_year,current_month,current_day,16,10,0,0,0);
-    var title = "Wohlverdientes Feierabend-Bier";
+    var title = "Well-earned after work beer.";
     if (typeof location === 'undefined') {
         var cal_location = "Kiez";
     }
     else {
         var cal_location = location;
     }
-    var notes = "Denke daran regelmäßig mit der App 'Kein Bier vor vier' zu prüfen, ob du noch trinken darfst!";
+    var notes = "Remember to regularly check with the app 'Beer O'Clock' whether you are allowd to drink!";
     // making a toast msg
     var success = function(message) { 
 		$('#toast_msg').html(cal_success_msg);
@@ -479,4 +479,4 @@ function WerbeSlideSwitch() {
 $(function() {
 	setInterval( "WerbeSlideSwitch()", 5000 );
 });
-* /
+*/
